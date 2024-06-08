@@ -1,0 +1,32 @@
+<!-- templates/edit_profile.html -->
+
+{% extends 'layout.html' %} {% block content %}
+<div class="container mt-4">
+  <h1>Edit Profile</h1>
+  <form method="POST" action="{{ url_for('views.edit_profile') }}">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        class="form-control"
+        value="{{ user.email }}"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="first_name" class="form-label">First Name:</label>
+      <input
+        type="text"
+        id="first_name"
+        name="first_name"
+        class="form-control"
+        value="{{ user.first_name }}"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Update Profile</button>
+  </form>
+</div>
+{% endblock %}
